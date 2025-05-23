@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro Global</title>
+  <script>
+    async function cargarNombres() {
+      const url = "https://raw.githubusercontent.com/TU_USUARIO/registro-nombres/main/nombres.json";
+      try {
+        const respuesta = await fetch(url);
+        const nombres = await respuesta.json();
+
+        const lista = document.getElementById("lista");
+        lista.innerHTML = "<h2>Nombres registrados:</h2>";
+        nombres.forEach(nombre => {
+          const li = document.createElement("li");
+          li.textContent = nombre;
+          lista.appendChild(li);
+        });
+      } catch (e) {
+        document.getElementById("lista").innerHTML = "<p>Error al cargar los nombres.</p>";
+      }
+    }
+  </script>
+</head>
+<body onload="cargarNombres()">
+  <h1>Registro Global de Nombres</h1>
+  <ul id="lista"></ul>
+</body>
+</html>
