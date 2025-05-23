@@ -2,13 +2,26 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Panel Privado</title>
+  <title>Panel Admin</title>
   <script>
-    window.onload = function () {
+    const CLAVE_CORRECTA = "admin123";
+
+    function verificarClave(event) {
+      event.preventDefault();
+      const clave = document.getElementById("clave").value;
+      if (clave === CLAVE_CORRECTA) {
+        mostrarLista();
+      } else {
+        alert("Clave incorrecta.");
+      }
+    }
+
+    function mostrarLista() {
       const lista = JSON.parse(localStorage.getItem("listaNombres")) || [];
       const contenedor = document.getElementById("listaNombres");
+      contenedor.innerHTML = "<h2>Lista de nombres:</h2>";
       if (lista.length === 0) {
-        contenedor.innerHTML = "<p>No hay nombres guardados aún.</p>";
+        contenedor.innerHTML += "<p>No hay nombres guardados aún.</p>";
       } else {
         const ul = document.createElement("ul");
         lista.forEach(nombre => {
@@ -18,11 +31,16 @@
         });
         contenedor.appendChild(ul);
       }
-    };
+    }
   </script>
 </head>
 <body>
-  <h1>Panel privado de administración</h1>
-  <div id="listaNombres"></div>
+  <h1>Panel privado</h1>
+  <form onsubmit="verificarClave(event)">
+    <label for="clave">Introduce la clave de acceso:</label><br>
+    <input type="password" id="clave" required>
+    <button type="submit">Entrar</button>
+  </form>
+  <div id="listaNombres" style="margin-top: 20px;"></div>
 </body>
 </html>
