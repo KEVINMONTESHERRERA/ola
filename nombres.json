@@ -1,0 +1,21 @@
+<script>
+  async function mostrarListaDesdeGitHub() {
+    const url = "https://raw.githubusercontent.com/tucuenta/nombres-registro/main/nombres.json";
+    const contenedor = document.getElementById("listaNombres");
+    try {
+      const response = await fetch(url);
+      const lista = await response.json();
+
+      contenedor.innerHTML = "<h2>Lista de nombres desde GitHub:</h2>";
+      const ul = document.createElement("ul");
+      lista.forEach(nombre => {
+        const li = document.createElement("li");
+        li.textContent = nombre;
+        ul.appendChild(li);
+      });
+      contenedor.appendChild(ul);
+    } catch (error) {
+      contenedor.innerHTML = "<p>Error al obtener datos desde GitHub.</p>";
+    }
+  }
+</script>
