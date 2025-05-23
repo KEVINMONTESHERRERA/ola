@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Página Secundaria</title>
   <script>
-    // Mostrar el nombre almacenado si existe
     window.onload = function () {
       const nombreGuardado = localStorage.getItem("nombreUsuario");
       if (nombreGuardado) {
@@ -17,6 +16,14 @@
       event.preventDefault();
       const nombre = document.getElementById("nombre").value;
       localStorage.setItem("nombreUsuario", nombre);
+
+      // Guardar en la lista de todos los usuarios
+      let lista = JSON.parse(localStorage.getItem("listaNombres")) || [];
+      if (!lista.includes(nombre)) {
+        lista.push(nombre);
+        localStorage.setItem("listaNombres", JSON.stringify(lista));
+      }
+
       document.getElementById("resultado").textContent = "Hola, " + nombre + "!";
     }
   </script>
