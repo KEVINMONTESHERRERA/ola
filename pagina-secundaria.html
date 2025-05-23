@@ -1,42 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Página Secundaria</title>
-  <script>
-    window.onload = function () {
-      const nombreGuardado = localStorage.getItem("nombreUsuario");
-      if (nombreGuardado) {
-        document.getElementById("resultado").textContent = "Hola de nuevo, " + nombreGuardado + "!";
-        document.getElementById("nombre").value = nombreGuardado;
-      }
-    };
-
-    function guardarNombre(event) {
-      event.preventDefault();
-      const nombre = document.getElementById("nombre").value;
-      localStorage.setItem("nombreUsuario", nombre);
-
-      // Guardar en la lista de todos los usuarios
-      let lista = JSON.parse(localStorage.getItem("listaNombres")) || [];
-      if (!lista.includes(nombre)) {
-        lista.push(nombre);
-        localStorage.setItem("listaNombres", JSON.stringify(lista));
-      }
-
-      document.getElementById("resultado").textContent = "Hola, " + nombre + "!";
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Página secundaria</h1>
-  <form onsubmit="guardarNombre(event)">
-    <label for="nombre">Escribe tu nombre:</label>
-    <input type="text" id="nombre" name="nombre" required>
-    <button type="submit">Enviar</button>
-  </form>
-  <p id="resultado"></p>
-  <br>
-  <a href="index.html">Volver a la página principal</a>
+    <div class="caja-principal"> 
+        <h1>PORQUE SI ALV</h1>
+    </div>
+    <a href="file:///C:/Users/kevom/Desktop/pruebaweb/index.html"> regresar al inicio</a>
 </body>
 </html>
