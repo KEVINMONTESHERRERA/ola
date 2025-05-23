@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Privado</title>
+  <script>
+    window.onload = function () {
+      const lista = JSON.parse(localStorage.getItem("listaNombres")) || [];
+      const contenedor = document.getElementById("listaNombres");
+      if (lista.length === 0) {
+        contenedor.innerHTML = "<p>No hay nombres guardados aún.</p>";
+      } else {
+        const ul = document.createElement("ul");
+        lista.forEach(nombre => {
+          const li = document.createElement("li");
+          li.textContent = nombre;
+          ul.appendChild(li);
+        });
+        contenedor.appendChild(ul);
+      }
+    };
+  </script>
+</head>
+<body>
+  <h1>Panel privado de administración</h1>
+  <div id="listaNombres"></div>
+</body>
+</html>
