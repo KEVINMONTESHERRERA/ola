@@ -1,6 +1,6 @@
 <script>
   async function mostrarListaDesdeGitHub() {
-    const url = "https://raw.githubusercontent.com/tucuenta/nombres-registro/main/nombres.json";
+    const url = https://kevinmontesherrera.github.io/ola/nombres.json;
     const contenedor = document.getElementById("listaNombres");
     try {
       const response = await fetch(url);
