@@ -1,18 +1,9 @@
-body{ 
-    background-color: antiquewhite;
-    height: 100%;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
 }
-.botonpedorro{
-    background-color: darkgoldenrod;
-    color: aliceblue;
-    padding: 10px 20px;
-    text-decoration: none;
-}
-.caja-principal{
-    text-align: center;
 
+h1 {
+  color: darkblue;
+  text-align: center;
 }
