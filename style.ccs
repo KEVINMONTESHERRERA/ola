@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="caja-principal">
+        <h1>DECUBRE QUIEN ES MAS GAY ENTRE <span class="importante">MALVAEZ</span> Y <span class="importante"> ABY</span></h1>
+        <P>AQUI PODRAS DESCUBRIRLO!</P>
+       <p> <a href="file:///C:/Users/kevom/Desktop/pruebaweb/pginaaby.html" class="botonpedorro">DESCUBRIR ABY</a>
+        <a href="file:///C:/Users/kevom/Desktop/pruebaweb/paginamalvaez.html" class="botonpedorro">DESCUBRIR MALVAEZ</a>
+       </p>
+    </div>
+</body>
+</html>
