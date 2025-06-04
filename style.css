@@ -83,8 +83,11 @@ header ul li{
     display: flex;
     justify-content: center;
     align-items: center;
-     padding: 100px 20px;
+     padding: 10px 20px;
     width: 100%;
     height: 20vh;
     font-size: medium;
+}
+.bloqueinvisible{
+    padding: 100px 1px;
 }
